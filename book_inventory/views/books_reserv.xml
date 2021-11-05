@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="reservation_books_form" model="ir.ui.view">
+        <field name="name">reservation.books.form</field>
+        <field name="model">reservation.books</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name_seq1" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="name_reservation"
+                               string="Reservation Name"/>
+                        <field name="customer" string="Customer"/>
+                        <field name="expiry_date" string="Expiry Date"/>
+                        <field name="field_related" string="Responsible User"/>
+                        <field name="note" string="Internal Note"/>
+                    </group>
+                    <notebook>
+                        <page string="Product Details">
+                            <field name="product_lines">
+                                <tree editable="bottom">
+                                    <field name="add_product"/>
+                                    <field name="add_quantity"/>
+                                    <field name="add_price"/>
+                                    <field name="customer_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="reservation_books_list" model="ir.ui.view">
+        <field name="name">reservation.books.tree</field>
+        <field name="model">reservation.books</field>
+        <field name="arch" type="xml">
+            <tree>
+
+                <field name="name_seq1" readonly="1"/>
+                <field name="name_reservation" string="Reservation Name"/>
+                <field name="customer" string="Customer"/>
+                <field name="expiry_date" string="Expiry Date"/>
+                <field name="field_related" string="Responsible User"/>
+                <field name="note" string="Internal Note"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="reservation_action" model="ir.actions.act_window">
+        <field name="name">Products Reservation</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">reservation.books</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Add your Books Reservations here!
+            </p>
+        </field>
+
+    </record>
+
+
+    <menuitem id="products_reservation"
+              name="Products Reservation"
+
+              action="reservation_action"
+              sequence="10"/>
+
+
+</odoo>

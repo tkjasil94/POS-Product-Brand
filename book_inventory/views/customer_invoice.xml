@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="customer_invoice_button" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+
+            <xpath expr="//form//sheet" position="before">
+                <header>
+                    <button name="352" string="Create Invoice"
+                            type="action"
+                            class="btn-primary"/>
+                </header>
+            </xpath>
+            <xpath expr="//header/button[@name='352']" position="after">
+                <button name="test_button_function" string="Create Delivery"
+                        type="object" class="btn-primary"/>
+            </xpath>
+
+
+        </field>
+    </record>
+</odoo>
+
+
