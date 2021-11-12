@@ -20,8 +20,8 @@
             <xpath expr="//field[@name='vat']" position="after">
                 <field name="is_book_owner"/>
             </xpath>
+
         </field>
     </record>
-
 
 </odoo>

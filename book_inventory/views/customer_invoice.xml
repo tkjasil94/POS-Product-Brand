@@ -19,7 +19,6 @@
                         type="object" class="btn-primary"/>
             </xpath>
 
-
         </field>
     </record>
 </odoo>

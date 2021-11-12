@@ -15,3 +15,8 @@ class ResPartner(models.Model):
     _inherit = "res.partner"
     is_book_owner = fields.Boolean(String="Is Book Owner")
 
+
+
+
+
+

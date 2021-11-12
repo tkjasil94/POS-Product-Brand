@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <div name="button_box" position="inside">
                 <button class="oe_stat_button" type="object"
-                        name="get_reservations"
+                        name="get_reservations" string="Reservations"
                         icon="fa-user">
 
                 </button>

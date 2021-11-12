@@ -28,6 +28,8 @@
                                     <field name="add_quantity"/>
                                     <field name="add_price"/>
                                     <field name="customer_id" invisible="1"/>
+                                    <field name="partner_id" invisible="1"/>
+
                                 </tree>
                             </field>
                         </page>
@@ -74,7 +76,7 @@
 
     <menuitem id="products_reservation"
               name="Products Reservation"
-
+              parent="sale.sale_order_menu"
               action="reservation_action"
               sequence="10"/>
 

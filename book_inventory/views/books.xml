@@ -8,10 +8,10 @@
 
 
             <search string="Inventory Books">
-                <field name="name" string="Name of Book" filter_domain="[('name'
-                 , 'ilike', self)]"/>
                 <field name="serial_number" string="Serial Number"
                        filter_domain="[('serial_number' , 'ilike', self)]"/>
+                <field name="isbn_number" string="ISBN Number"
+                       filter_domain="[('isbn_number' , 'ilike', self)]"/>
 
 
                 <filter string="Available" domain="[('avail', '!=', False)]"
@@ -115,13 +115,13 @@
     </record>
 
 
-    <menuitem id="inventory_books_root"
-              name="Books"
-              sequence="10"/>
+    <!--    <menuitem id="inventory_books_root"-->
+    <!--              name="Books"-->
+    <!--              sequence="10"/>-->
     <menuitem id="inventory_books"
               name="Books"
               action="books_action"
-              parent="inventory_books_root"
+              parent="stock.menu_stock_root"
               sequence="10"/>
 
 
