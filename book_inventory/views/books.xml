@@ -1,39 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+<!--    <record id="products_books_search" model="ir.ui.view">-->
+<!--        <field name="name">products.books.search</field>-->
+<!--        <field name="model">product.template</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <search string="Product Books">-->
+<!--                <field name="related_books" string="Related Books"-->
+<!--                       filter_domain="[('related_books' , 'ilike', self)]"/>-->
+<!--            </search>-->
+<!--        </field>-->
+<!--    </record>-->
+
 
     <record id="inventory_books_search" model="ir.ui.view">
         <field name="name">inventory.books.search</field>
         <field name="model">inventory.books</field>
         <field name="arch" type="xml">
-
-
             <search string="Inventory Books">
                 <field name="serial_number" string="Serial Number"
                        filter_domain="[('serial_number' , 'ilike', self)]"/>
                 <field name="isbn_number" string="ISBN Number"
                        filter_domain="[('isbn_number' , 'ilike', self)]"/>
-
-
                 <filter string="Available" domain="[('avail', '!=', False)]"
                         name="avail"></filter>
-
-
-                <!--our custom search we can define.....
-                all the three types of search filters.-->
-
-
                 <group expand="0" string="Group By">
                     <filter string="Publisher Name" name="publisher_name"
                             context="{'group_by': 'publisher_name'}"></filter>
                     <filter string="Book Category" name="book_category"
                             context="{'group_by': 'book_category'}"></filter>
                 </group>
-
-
             </search>
-
         </field>
-
     </record>
 
 
@@ -51,11 +48,8 @@
                 <field name="publisher_name"/>
                 <field name="user_id"/>
                 <field name="serial_number"/>
-
-
+                <field name="invoice_ref"/>
             </tree>
-
-
         </field>
     </record>
 
@@ -77,6 +71,9 @@
                             <field name="isbn_number" string="ISBN Number"/>
                             <field name="book_category" widget="selection"
                                    string="Book Category"/>
+                            <field name="invoice_ref"
+                                   string="Invoice Reference"/>
+
                         </group>
 
                         <group name="second">
@@ -94,12 +91,12 @@
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
                     <field name="message_ids"/>
                 </div>
             </form>
         </field>
     </record>
-
 
     <record id="books_action" model="ir.actions.act_window">
         <field name="name">Books</field>
@@ -117,6 +114,11 @@
 
     <!--    <menuitem id="inventory_books_root"-->
     <!--              name="Books"-->
+    <!--              sequence="10"/>-->
+    <!--    <menuitem id="inventory_root"-->
+    <!--              name="Inventory"-->
+    <!--              action="inventory_action"-->
+    <!--              parent="inventory_books_root"-->
     <!--              sequence="10"/>-->
     <menuitem id="inventory_books"
               name="Books"

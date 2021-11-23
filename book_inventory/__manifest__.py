@@ -10,7 +10,9 @@
     'depends': ['product', 'sale', 'contacts', 'mail'],
     'data': [
         'security/ir.model.access.csv',
+        'security/security.xml',
         'data/book_sequence.xml',
+        'data/reservation_expiration.xml',
         'views/books.xml',
         'views/books_invent.xml',
         'views/books_reserv.xml',

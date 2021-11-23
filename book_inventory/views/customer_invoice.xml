@@ -9,12 +9,12 @@
 
             <xpath expr="//form//sheet" position="before">
                 <header>
-                    <button name="352" string="Create Invoice"
-                            type="action"
+                    <button name="create_invoice" string="Create Invoice"
+                            type="object"
                             class="btn-primary"/>
                 </header>
             </xpath>
-            <xpath expr="//header/button[@name='352']" position="after">
+            <xpath expr="//header/button[@name='create_invoice']" position="after">
                 <button name="test_button_function" string="Create Delivery"
                         type="object" class="btn-primary"/>
             </xpath>

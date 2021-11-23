@@ -27,5 +27,18 @@ class InventoryBooks(models.Model):
     serial_number = fields.Integer(string='Serial Number', required=True)
     _sql_constraints = [('serial_number_unique', 'unique(serial_number)',
                          'Cant be duplicate value for this field!')]
-
     note = fields.Text(string='Description')
+    invoice_ref = fields.Many2one('account.move', string='Invoice Reference',
+                                  required=True)
+
+    @api.onchange('publisher_name')
+    def onchange_publisher_name(self):
+        for rec in self:
+            return {'domain': {
+                'invoice_ref': [('partner_id', '=', rec.publisher_name.id)]}}
+
+    # print(self)
+    # inv_ref = self.env['account.move'].search([('partner_id',
+    #                                            '=', self.publisher_name)])
+    # print(inv_ref)
+    # print(inv_ref.payment_reference)
