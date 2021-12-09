@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_inventory_books,access.inventory.books,model_inventory_books,base.group_user,1,1,1,1
-access_reservation_books,access.reservation.books,model_reservation_books,base.group_user,1,1,1,1
-access_product_reservation_lines,access.product.reservation.lines,model_product_reservation_lines,base.group_user,1,1,1,1
-access_scholar_manager,access.scholar.manager,book_inventory.model_reservation_books,group_scholar_manager,1,1,1,1
